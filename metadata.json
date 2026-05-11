@@ -1,0 +1,5 @@
+{
+  "name": "Nexus Hub de Sistemas",
+  "description": "Um painel centralizado para gerenciar e acessar múltiplos sistemas web com suporte offline e sincronização multiusuário.",
+  "requestFramePermissions": []
+}

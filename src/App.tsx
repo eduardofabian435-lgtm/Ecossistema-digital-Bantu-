@@ -353,10 +353,19 @@ const Dashboard = () => {
       <header className="sticky top-0 z-40 bg-white/80 dark:bg-blue-900/80 backdrop-blur-md border-b border-blue-100 dark:border-blue-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-blue-600 dark:bg-yellow-400 rounded-xl flex items-center justify-center">
-              <LayoutGrid className="w-6 h-6 text-white dark:text-blue-950" />
+            <div className="w-10 h-10 bg-blue-600 dark:bg-yellow-400 rounded-xl flex items-center justify-center overflow-hidden">
+              <img 
+                src="/logo.png" 
+                alt="Logo" 
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement?.querySelector('svg')?.classList.remove('hidden');
+                }}
+              />
+              <LayoutGrid className="w-6 h-6 text-white dark:text-blue-950 hidden" />
             </div>
-            <h1 className="text-xl font-bold tracking-tight hidden sm:block">Nexus Hub</h1>
+            <h1 className="text-xl font-bold tracking-tight hidden sm:block">Rede Bantu</h1>
           </div>
 
           <div className="flex-1 max-w-md mx-8 hidden md:block">
@@ -490,14 +499,23 @@ const LandingPage = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative z-10 text-center max-w-2xl"
+        className="relative z-10 text-center max-w-2xl px-4"
       >
-        <div className="w-20 h-20 bg-blue-600 dark:bg-yellow-400 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl">
-          <LayoutGrid className="w-10 h-10 text-white dark:text-blue-950" />
+        <div className="w-32 h-32 sm:w-48 sm:h-48 bg-blue-600 dark:bg-yellow-400 rounded-[2.5rem] flex items-center justify-center mx-auto mb-8 shadow-2xl overflow-hidden border-4 border-white dark:border-blue-900">
+          <img 
+            src="/logo.png" 
+            alt="Rede Bantu Logo" 
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.parentElement?.querySelector('svg')?.classList.remove('hidden');
+            }}
+          />
+          <LayoutGrid className="w-16 h-16 sm:w-24 sm:h-24 text-white dark:text-blue-950 hidden" />
         </div>
         
         <h1 className="text-6xl sm:text-7xl font-black tracking-tighter text-blue-900 dark:text-white mb-6">
-          Nexus Hub
+          Rede Bantu
         </h1>
         <p className="text-xl text-blue-700 dark:text-blue-200 mb-12 leading-relaxed">
           O sistema nervoso central para sua infraestrutura digital. Gerencie, sincronize e acesse todas as suas aplicações de um painel seguro e pronto para uso offline.

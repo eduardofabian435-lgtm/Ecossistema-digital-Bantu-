@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/Ecossistema-digital-Bantu-/sw.js', { scope: '/Ecossistema-digital-Bantu-/' })})}
